@@ -23,7 +23,7 @@ from esutils import isoFormat_from_str_tz
 API_KEY = os.environ.get('API_KEY','e13626d03d8e4c03ac07f95541b3091b')  ## that's the public demo api key
 
 
-certLocation = os.environ.get("SA_OPTICS_ES_CA_CERT", certifi.where())
+certLocation = os.environ.get("ES_CA_CERT", certifi.where())
 esConnString = os.environ.get('ES_CONN_STRING', 'http://localhost:9200')
 esTo = Elasticsearch([esConnString],request_timeout=100,ca_certs=certLocation)
 writeBatchSize = 100

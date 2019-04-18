@@ -1,0 +1,19 @@
+version: '2'
+services:
+
+  wmatageo:
+    build: wmatageo
+    networks:
+      internal-tls:
+        ipv4_address: 172.18.13.2
+
+networks:
+  internal-tls:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.18.13.0/24
+        gateway: 172.18.13.1
+
+
